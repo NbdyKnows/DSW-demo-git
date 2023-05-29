@@ -15,6 +15,16 @@ public class CountryRepository {
 
 	@PostConstruct
 	public void initData() {
+		Country pe = new Country();
+		pe.setName("Peru");
+		pe.setCapital("Lima");
+		pe.setCurrency(Currency.PEN);
+		pe.setPopulation(33720000);
+
+		countries.put(pe.getName(), pe);
+
+
+
 		Country spain = new Country();
 		spain.setName("Spain");
 		spain.setCapital("Madrid");
@@ -38,14 +48,6 @@ public class CountryRepository {
 		uk.setPopulation(63705000);
 
 		countries.put(uk.getName(), uk);
-
-		Country peru = new Country();
-		uk.setName("Perú");
-		uk.setCapital("Lima");
-		uk.setCurrency(Currency.PEN);
-		uk.setPopulation(33720000);
-
-		countries.put(peru.getName(), peru);
 	}
 
 	public Country findCountry(String name) {
